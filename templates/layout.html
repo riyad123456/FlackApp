@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>Flack</title>
+        <script>
+/*
+            if (localStorage.getItem('last-channel')) {
+                // Redirect to last channel
+                let channel = localStorage.getItem('last-channel');
+                window.location.replace('/channel/' + channel);
+
+            }
+
+        </script>
+        <link rel="stylesheet" href="../static/layout.css">
+      </head>
+
+  <body>
+
+      <div class="part1">
+        <button id="home">
+          <div class="logo">
+        <img src="../static/Slack_Logo.png" width="70" height="70" alt="Flack"></img>
+      </div>
+        <div class="logotext">
+          <p id="flack">Flack</p>
+        </div>
+      </button>
+        </div>
+        <br></br>
+        <div class="navbar1">
+          <h1>Join Flack!<h1/>
+            <p id="first-text"> Flack makes connecting with people from around the world easier. </P>
+              <p id="second-text"> Enter your display name and get started!</p>
+          <form class="display-name" action="{{url_for('usersession')}}" method="post">
+            <input id="display-name" type="text" name="display-name" autocomplete="off" autofocus placeholder="Enter your display name" ></input>
+
+            <p id="error">{% block content %}
+            {% endblock %}</p>
+
+            <button class="register">
+            <p id="register">Register</p>
+          </button>
+          </form>
+        </div>
+        <br></br>
+      <div class="partf">
+        <p>This website was developed by the best of all programmers Riyad!</p>
+      </div>
+      </body>
+</html>

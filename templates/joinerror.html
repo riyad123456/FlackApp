@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Flack</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/style2error.css">
+    <script src="../static/JOIN2.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP JS (Last) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Socket IO JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    </head>
+    <body>
+      <div class="part1">
+        <button id="home">
+          <div class="logo">
+        <img src="../static/Slack_Logo.png" width="70" height="70" alt="Flack"></img>
+      </div>
+        <div class="logotext">
+          <p id="flack">Flack</p>
+        </div>
+      </button>
+        </div>
+        <div class= "content">
+        <div class="channel-bar">
+          <h1 id="welcome"> Welcome {{username}} </h1>
+          <form id="create-channel">
+            <input id="channel-input" name="channel" type="text" autofocus autocomplete="off" placeholder="Channel name..."></input>
+
+            <p id="error">*{{newchannel}} already exists*</p>
+            <input id="create-channel-button" type="submit" value="Create channel"></input>
+             </form>
+             <p id="list-header"> Channels: </p>
+             <div class="channels-box">
+                 {% for channel in channels %}
+                 <a href="/channel/{{ channel }}">
+                    <p class="dropdown-item" >{{ channel }}</p>
+                        </a>
+                  {% endfor %}
+               </div>
+          </div>
+        </div>
+        </body>
+  </html>

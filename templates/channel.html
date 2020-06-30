@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>Flack</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="../static/ChanneL.css">
+        <script src="../static/toggle.js"></script>
+        <script src="../static/channel.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+        <!-- BOOTSTRAP JS (Last) -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+        <!-- Socket IO JS-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf-8"></script>
+        </head>
+          <body>
+            <div class="part1">
+              <button id="home">
+                <div class="logo">
+              <img src="../static/Slack_Logo.png" width="70" height="70" alt="Flack"></img>
+            </div>
+              <div class="logotext">
+                <p id="flack">Flack</p>
+              </div>
+            </button>
+
+            <div class="s-dropdown-wrapper">
+              <input placeholder="Channels" onclick="toggleDropdown('s-dp-01',
+              's-arr-01')" type="text" name="" id="s-dp-input-01" readonly>
+              <img id="s-arr-01" onclick="toggleDropdown('s-dp-01','s-arr-01')" src="../static/arrow.png" alt="">
+              <div id="s-dp-01" class="s-dropdown-list">
+
+                {% for channel in channels %}
+                <a id="join" href="/channel/{{ channel }}">
+                   <p class="dropdown-item" >{{ channel }}</p>
+                       </a>
+                  {% endfor %}
+                </div>
+              </div>
+              <div id="username-session"> ID : {{id}}</div>
+              <form action="{{url_for('logout')}}" method="get">
+              <button id="logout">Log out</button>
+
+            </form>
+
+              </div>
+              <br></br>
+              <div class= "content">
+                  <div class="channel-content">
+                    <div class="channel-content-box">
+                      <div id="channel-title">
+                        <p> {{channeltitle}} </p>
+                        </div>
+                        <div class="messages">
+                          <textarea id="chat" resize="none" readonly>
+                              {%- if messages -%}
+                                  {%- for message in messages -%}
+                                    <{{ message[0] }}> - [{{ message[1] }}]: {{ message [2] }} {{'\n'}}
+                                  {%- endfor -%}
+                                  {{ '----- These are old messages -----' }}{{- '\n' -}}
+                              {%- endif -%}
+                          </textarea>
+                          </div>
+                          <div id="send-bar">
+
+                              <input id="message" class="form-control" size="50" autocomplete="off" autofocus>
+                              <input id="send-message" type="submit" value="send"></input>
+                              <input id="leave" type="submit" value="Leave channel"></input>
+
+                            </div>
+
+                    </div>
+                    </div>
+                  </div>
+          </body>
+        </html>

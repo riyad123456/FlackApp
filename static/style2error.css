@@ -1,0 +1,140 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(Montserrat-Regular.ttf);
+}
+body{
+  background-color:#2F2D2C;
+}
+.part1 {
+      margin-top:20px;
+      width:100%;
+      height:70px;
+      background-color:#6E6E6E;
+      border-radius: 30px;
+      position: relative;
+    }
+    #home .logotext{
+      font-family:myFirstFont;
+      color:white;
+      font-size:20px;
+      height:70px;
+      top:50%;
+      bottom:50%;
+    }
+    #home {
+        width:200px;
+        height:70px;
+        background-color:#6E6E6E;
+        display:flex;
+        border-radius:20px;
+        cursor:pointer;
+        border:none;
+        outline:none;
+    }
+    #flack{
+      top:50%;
+      bottom:50%;
+    }
+    ::placeholder {
+      font-family:myFirstFont;
+      color:black;
+      font-size:12.5px;
+
+    }
+    #error{
+      font-family:myFirstFont;
+      font-size:15px;
+      color:#FF0000;
+      margin-bottom:15px;
+    }
+    .content{
+      display:block;
+    }
+    .channel-bar{
+      width:500px;
+      height:560px;
+      background:#6E6E6E;
+      border-radius:30px;
+      text-align:center;
+      margin:0 auto;
+      padding-top: 20px;
+      margin-top:20px;
+    }
+    #welcome{
+      font-family:myFirstFont;
+      font-size:20px;
+      color:white;
+    }
+    #create-channel-button{
+      background-color:#504C4C;
+      border-radius: 5px;
+      font-family:myFirstFont;
+      font-size:15px;
+      color:white;
+      outline:none;
+      width:250px;
+      height:30px;
+      border-radius:5px;
+      border:none;
+      cursor:pointer;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    #create-channel-button:hover{
+      border:1px solid white;
+      background:#000000;
+    }
+    #channel-input{
+      height:30px;
+      width:400px;
+      border-radius:5px;
+      outline:none;
+      position:relative;
+      border-radius:5px;
+      font-family:myFirstFont;
+      color:black;
+      font-size:13px;
+      border:none;
+    }
+    #list-header{
+      font-family:myFirstFont;
+      font-size:20px;
+      color:white;
+      margin-bottom:2px;
+      margin-top:2px;
+    }
+    .channels-box{
+      background:#413C3C;
+      box-shadow:0px 4px 12px rgba(238,69,64,0.15);
+      border-radius:10px;
+      height:350px;
+      width:300px;
+      margin:0 auto;
+      overflow:scroll;
+      overflow-x:hidden;
+      transition:270ms ease;
+    }
+    .channels-box p{
+      padding:4px 8px;
+      margin:4px;
+      border-radius:4px;
+      transition:170ms ease;
+      font-family:myFirstFont;
+      color:white;
+      font-size:20px;
+      outline:none;
+      border:none;
+    }
+    .channels-box a{
+      text-decoration:none;
+    }
+    .channels-box p:hover{
+      background:#6E6E6E;
+      cursor:pointer;
+    }
+    .channels-box::-webkit-scrollbar {
+  display: none;
+}
+    .channels-box{
+      -ms-overflow-style: none;
+    }
